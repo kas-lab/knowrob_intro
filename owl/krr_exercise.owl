@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.airlab.org/tiago/pick-and-place#"
+     xml:base="http://www.airlab.org/tiago/pick-and-place"    
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:DUL="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:SOMA="http://www.ease-crc.org/ont/SOMA.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.airlab.org/tiago/pick-and-place">
+        <owl:imports rdf:resource="http://www.ease-crc.org/ont/SOMA.owl"/>
+    </owl:Ontology>
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#hasMassAttribute -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#hasMassAttribute"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#hasPhysicalComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#hasPhysicalComponent"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#hasMassValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.ease-crc.org/ont/SOMA.owl#hasMassValue"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#Chair -->
+
+    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Chair">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#DesignedFurniture"/>
+        <owl:disjointWith rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Table"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#ChairTable -->
+
+    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#ChairTable">
+        <rdfs:subClassOf rdf:resource="http://www.airlab.org/tiago/pick-and-place#Chair"/>
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Table"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#Jar -->
+
+    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Jar">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Crockery"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#hasPhysicalComponent"/>
+                <owl:someValuesFrom rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#DesignedHandle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#Crockery -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Crockery"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#DesignedFurniture -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#DesignedFurniture"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#DesignedHandle -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#DesignedHandle"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#DishwasherTab -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#DishwasherTab"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#MassAttribute -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#MassAttribute"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#PancakeMix -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#PancakeMix"/>
+    
+
+
+    <!-- http://www.ease-crc.org/ont/SOMA.owl#Table -->
+
+    <owl:Class rdf:about="http://www.ease-crc.org/ont/SOMA.owl#Table"/>
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#Cheese -->
+
+    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Cheese">
+        <rdfs:subClassOf rdf:resource="http://www.airlab.org/tiago/pick-and-place#Perishable"/>
+        <owl:disjointWith rdf:resource="http://www.airlab.org/tiago/pick-and-place#Milk"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#Milk -->
+
+    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Milk">
+        <rdfs:subClassOf rdf:resource="http://www.airlab.org/tiago/pick-and-place#Perishable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#Perishable -->
+
+    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Perishable">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#Rice -->
+
+    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Rice">
+        <rdfs:subClassOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#DesignedSubstance"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#milk_product_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.airlab.org/tiago/pick-and-place#milk_product_1">
+        <rdf:type rdf:resource="http://www.airlab.org/tiago/pick-and-place#Milk"/>
+        <SOMA:hasMassAttribute rdf:resource="http://www.airlab.org/tiago/pick-and-place#milk_weight_full"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#milk_product_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.airlab.org/tiago/pick-and-place#milk_product_2">
+        <rdf:type rdf:resource="http://www.airlab.org/tiago/pick-and-place#Milk"/>
+        <SOMA:hasMassAttribute rdf:resource="http://www.airlab.org/tiago/pick-and-place#milk_weight_half"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#milk_weight_full -->
+
+    <owl:NamedIndividual rdf:about="http://www.airlab.org/tiago/pick-and-place#milk_weight_full">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#MassAttribute"/>
+        <SOMA:hasMassValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.6</SOMA:hasMassValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#milk_weight_half -->
+
+    <owl:NamedIndividual rdf:about="http://www.airlab.org/tiago/pick-and-place#milk_weight_half">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#MassAttribute"/>
+        <SOMA:hasMassValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.3</SOMA:hasMassValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#rice_product_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.airlab.org/tiago/pick-and-place#rice_product_1">
+        <rdf:type rdf:resource="http://www.airlab.org/tiago/pick-and-place#Rice"/>
+        <SOMA:hasMassAttribute rdf:resource="http://www.airlab.org/tiago/pick-and-place#rice_weight_half"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#rice_product_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.airlab.org/tiago/pick-and-place#rice_product_2">
+        <rdf:type rdf:resource="http://www.airlab.org/tiago/pick-and-place#Rice"/>
+        <SOMA:hasMassAttribute rdf:resource="http://www.airlab.org/tiago/pick-and-place#rice_weight_full"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#rice_weight_full -->
+
+    <owl:NamedIndividual rdf:about="http://www.airlab.org/tiago/pick-and-place#rice_weight_full">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#MassAttribute"/>
+        <SOMA:hasMassValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.2</SOMA:hasMassValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#rice_weight_half -->
+
+    <owl:NamedIndividual rdf:about="http://www.airlab.org/tiago/pick-and-place#rice_weight_half">
+        <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#MassAttribute"/>
+        <SOMA:hasMassValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.6</SOMA:hasMassValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#DishwasherTab"/>
+            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#PancakeMix"/>
+            <rdf:Description rdf:about="http://www.airlab.org/tiago/pick-and-place#Perishable"/>
+            <rdf:Description rdf:about="http://www.airlab.org/tiago/pick-and-place#Rice"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
