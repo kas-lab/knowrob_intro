@@ -6,11 +6,12 @@ This is a temporal repository to store first steps into using a self-made ontolo
 
 Install SWI prolog and MongoDB using [these instructions](https://github.com/knowrob/knowrob#installation-of-swi-prolog-and-mongodb).
 
-Create a catking repository and clone [Knowrob](https://github.com/knowrob/knowrob):
+Create a catking repository, clone this repository and [Knowrob](https://github.com/knowrob/knowrob):
 
 ```Bash
 rosdep update
 cd ~/catkin_ws/src
+git clone https://github.com/estherag/knowrob-intro.git
 wstool init
 wstool merge https://raw.github.com/knowrob/knowrob/master/rosinstall/knowrob-base.rosinstall
 wstool update
