@@ -40,7 +40,7 @@ rosrun rosprolog rosprolog_commandline.py
 Inside the Prolog terminal, first load your ontology: - This step will be done by a launch file in a pkg soon-
 
 ```Bash
-load_owl('[FULL PATH TO YOUR OWL FILE]/krr_exercise.owl', [namespace(pap, 'http://www.airlab.org/tiago/pick-and-place#')]).
+load_owl('package://krr_example/owl/krr_exercise.owl', [namespace(pap, 'http://www.airlab.org/tiago/pick-and-place#')])
 ```
 pap is the name space defined for your ontology, you can use any name.
 
