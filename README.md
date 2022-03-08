@@ -38,7 +38,7 @@ rosrun rosprolog rosprolog_commandline.py
 
 ## Quering
 
-Inside the Prolog terminal, first load your ontology: - This step will be done by a launch file in a pkg soon-
+Inside the Prolog terminal, first load your ontology:
 
 ```Bash
 load_owl('package://krr_example/owl/krr_exercise.owl', [namespace(pap, 'http://www.airlab.org/tiago/pick-and-place#')])
