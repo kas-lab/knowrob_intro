@@ -50,17 +50,17 @@ Example of queries here, more information at [Knowrob model documentation](https
 is_class(soma:'Crockery').
 ```
 True.
-```
-### Interfacing with the knowledge base
+
+## Interfacing with the knowledge base
 
 To facilitate a quick introduction to knowrob, we have added a brief description of our understanding in the main commands used. However, this documentation only serves as a starting point. For a better understanding please refer to the official documentation.
 
-#### Main knowrob documentation on interfacing with the knowledge base
+### Main knowrob documentation on interfacing with the knowledge base
 * [Knowrob model documentation](https://knowrob.github.io/knowrob/master/model/)
 * [Knowrob language documentation](https://knowrob.github.io/knowrob/master/lang/index.html)
 * [Knowrob language terms documentation](https://knowrob.github.io/knowrob/master/lang/index.html)
 
-#### Our understanding on interfacing with the knowledge base with examples
+### Our understanding on interfacing with the knowledge base with examples
 * [Read from the ontology](h)
 * [Main knowrob terms]
 * [Asserting properties]
