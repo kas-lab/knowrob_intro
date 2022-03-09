@@ -47,79 +47,27 @@ pap is the name space defined for your ontology, you can use any name.
 
 Example of queries here, more information at [Knowrob model documentation](https://knowrob.github.io/knowrob/master/model/):
 ```
-?- is_class(soma:'Crockery').
+is_class(soma:'Crockery').
 ```
 True.
 ```
-?- is_class(pap:'Rice').
-```
-True.
-```
-?- has_type(X, pap:'Perishable').
-```
-X: http://www.airlab.org/tiago/pick-and-place#milk_product_1 ;
+### Interfacing with the knowledge base
 
-X: http://www.airlab.org/tiago/pick-and-place#milk_product_2.
-```
-?- is_individual(pap:'milk_product_1')
-```
-true.
-```
-?- is_object_property(dul:'hasPart')
-```
-true.
-```
-?- is_data_property(soma:'hasMassValue').
-```
-true.
-```
-?- has_domain(soma:'hasMassValue',X)
-```
-X: http://www.ease-crc.org/ont/SOMA.owl#MassAttribute.
-```
-?- disjoint_with(Y,soma:'FixedJoint').
-```
-Y: http://www.ease-crc.org/ont/SOMA.owl#MovableJoint ;
+To facilitate a quick introduction to knowrob, we have added a brief description of our understanding in the main commands used. However, this documentation only serves as a starting point. For a better understanding please refer to the official documentation.
 
-Y: http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality ;
+#### Main knowrob documentation on interfacing with the knowledge base
+* [Knowrob model documentation](https://knowrob.github.io/knowrob/master/model/)
+* [Knowrob language documentation](https://knowrob.github.io/knowrob/master/lang/index.html)
+* [Knowrob language terms documentation](https://knowrob.github.io/knowrob/master/lang/index.html)
 
-Y: http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Abstract ;
-
-Y: http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event ;
-
-Y: http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SocialObject ;
-
-Y: http://www.ease-crc.org/ont/SOMA.owl#Feature.
-```
-?- holds(A, rdf:type, pap:'Milk').
-```
-A: http://www.airlab.org/tiago/pick-and-place#milk_product_1 ;
-
-A: http://www.airlab.org/tiago/pick-and-place#milk_product_2.
-
-```
-?- triple(A, rdf:type, pap:'Milk').
-```
-A: http://www.airlab.org/tiago/pick-and-place#milk_product_1 ;
-
-A: http://www.airlab.org/tiago/pick-and-place#milk_product_2.
-```
-?- triple(pap:'Milk', P, O).
-```
-P: http://www.w3.org/1999/02/22-rdf-syntax-ns#type,
-
-O: http://www.w3.org/2002/07/owl#Class ;
+#### Our understanding on interfacing with the knowledge base with examples
+* [Read from the ontology](h)
+* [Main knowrob terms]
+* [Asserting properties]
+* [Creating individuals]
 
 
-P: http://www.w3.org/2000/01/rdf-schema#subClassOf,
-
-O: http://www.airlab.org/tiago/pick-and-place#Perishable.
-```
-?- triple(pap:'milk_product_1', soma:hasMassAttribute, X), triple(X, soma:hasMassValue, Y)
-```
-Y: 0.6,
-
-X: http://www.airlab.org/tiago/pick-and-place#milk_weight_full.
+first steps can 
 
 ## Some comments:
 
