@@ -51,6 +51,18 @@ is_class(soma:'Crockery').
 ```
 True.
 
+## Quering from source
+
+Launch knowrob:
+```Bash
+roslaunch knowrob knowrob.launch 
+```
+
+Launch a test quering code
+```Bash
+rosrun knowrob-intro example_query_owl.py 
+```
+
 ## Interfacing with the knowledge base
 
 To facilitate a quick introduction to knowrob, we have added a brief description of our understanding in the main commands used. However, this documentation only serves as a starting point. For a better understanding please refer to the official documentation.
