@@ -63,7 +63,7 @@ if __name__ == '__main__':
     print("Cleaning database...")
     pq.prolog_query("kb_unproject(_).") # clean DB before starting
     # load example.owl in the knowrob database to access its content
-    query = pq.prolog_query("load_owl('package://krr_example/owl/krr_exercise.owl', [namespace(pap, 'http://www.airlab.org/tiago/pick-and-place#')]).")
+    query = pq.prolog_query("load_owl('package://knowrob_intro/owl/krr_exercise.owl', [namespace(pap, 'http://www.airlab.org/tiago/pick-and-place#')]).")
     
     query = pq.prolog_query("instance_of(X, pap:'Milk').")
     print("Instances of Milk:")
