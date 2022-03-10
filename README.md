@@ -1,6 +1,6 @@
 # knowrob-intro
 
-This is a temporal repository to store first steps into using a self-made ontology for Knowrob.
+This repository store the first steps into using a self-made ontology for Knowrob.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Create a catking repository, clone this repository and [Knowrob](https://github.
 ```Bash
 rosdep update
 cd ~/catkin_ws/src
-git clone https://github.com/estherag/knowrob-intro.git
+git clone https://github.com/kas-lab/knowrob-intro.git
 wstool init
 wstool merge https://raw.github.com/knowrob/knowrob/master/rosinstall/knowrob-base.rosinstall
 wstool update
@@ -50,6 +50,18 @@ Example of queries here, more information at [Knowrob model documentation](https
 is_class(soma:'Crockery').
 ```
 True.
+
+## Quering from source
+
+Launch knowrob:
+```Bash
+roslaunch knowrob knowrob.launch 
+```
+
+Launch a test quering code
+```Bash
+rosrun knowrob-intro example_query_owl.py 
+```
 
 ## Interfacing with the knowledge base
 
