@@ -1,59 +1,69 @@
+""" Module to define a prolog query,
+includes inicialization, quering and data extracting methods. """
 #!/usr/bin/env python
 
-''' Module to define a prolog query,
-includes inicialization, quering and data extracting methods. '''
-
-
+from rosprolog_client import Prolog
 import roslib; roslib.load_manifest('rosprolog')
-from rosprolog_client import PrologException, Prolog
 
 class PrologQuery(object):
     def __init__(self):
 
-        self.prolog = Prolog() # attribute type Prolog class (from rosprolog_client)
+        self.prolog = Prolog() # attribute instance of Prolog class (from rosprolog_client)
         self.predicates = [] # initialize list attribute
         self.load_namespace()
         self.load_all_predicates()
 
     def load_namespace(self):
-        ''' Load all namespaces in knowrob environment: SOMA, DUL and other
-         ontologies used in previous versions of knowrob. Define in '''
-         
+        """ Load all namespaces in knowrob environment: SOMA, DUL and other
+         ontologies used in previous versions of knowrob. """
+
         q = 'findall([_X, _Y], rdf_current_ns(_X, _Y), NS)'
         solution = self.prolog.once(q)
         print('namespaces:')
         for ns in solution['NS']:
             print('{}: {}'.format(ns[0], ns[1]))
         print('-----------')
+
    
     def load_all_predicates(self):
-        ''' Load all predicates  '''
+        """ Load all available predicates. The knowrob ones are defined inside __init__.pl
+         files, see https://github.com/knowrob/knowrob/blob/master/src/model/__init__.pl """
 
         q = 'findall(X, current_predicate(X/_);current_module(X), L)'
         solution = self.prolog.once(q)
         self.predicates = [str(x) for x in solution['L']]
   
     def prolog_query(self, q):
+        """ Do prolog query. Takes as argument the query string and returns a list of dictionaries.
+        One dictionary per query result. """
+
         query = self.prolog.query(q)
         solutions = [x for x in query.solutions()]
         query.finish()
-        #self.print_all_solutions(solutions)
         return solutions
 
     def remove_full_iri(self, value): 
+        """ Takes as argument a query result dictionary and returns the query in tuple format
+        (namespace, name_value). """
+
         q = 'findall([_X, _Y], rdf_current_ns(_X, _Y), NS)'
         solution = self.prolog.once(q)
         for ns in solution['NS']:
             if ns[1] in value:
                 value_new = value.replace(ns[1], '')
-                solution_formated = (ns[0], value_new) # tuple namespace, individual
-                return solution_formated
+		break
+	    else:
+		value_new = value
+        solution_formated = (ns[0], value_new) # tuple namespace, individual
+        return solution_formated
 
     def get_all_solutions(self, solutions, print_solutions=True):
+        """ Stores all query solutions in a list of tuples (namespace, name_value) for easy usage.
+        By default, also print the query result. """
+
         solutions_list = []
         name_value = ()
-        
-        if len(solutions) == 0:
+        if len(solutions) == 0: # list empty
             name_value = ('false', 'false')
             solutions_list.append(name_value)
             if print_solutions == True:
@@ -73,7 +83,7 @@ class PrologQuery(object):
                         name_value = (rv[0], rv[1])
                         solutions_list.append(name_value)
                         if print_solutions == True: 
-                            print('{} : {}:{}'.format(k, name_value[0], name_value[1]))
+				print('{} : {}:{}'.format(k, name_value[0], name_value[1]))
         if print_solutions == True: 
             print # end with new line
         return solutions_list
