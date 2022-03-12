@@ -60,7 +60,7 @@ roslaunch knowrob knowrob.launch
 
 Launch a test quering code
 ```Bash
-rosrun knowrob-intro example_query_owl.py 
+rosrun knowrob_intro example_query_owl.py 
 ```
 
 ## Interfacing with the knowledge base

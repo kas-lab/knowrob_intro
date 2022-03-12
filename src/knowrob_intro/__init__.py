@@ -20,7 +20,7 @@ class PQ(object):
             print('{}: {}'.format(ns[0], ns[1]))
         print('-----------')
 
-    def remove_namespace(self, value):  #
+    def remove_full_iri(self, value): 
         q = 'findall([_X, _Y], rdf_current_ns(_X, _Y), NS)'
         solution = self.prolog.once(q)
         for ns in solution['NS']:
@@ -52,7 +52,7 @@ class PQ(object):
                     print('true.')
                 else:
                     for k, v in s.items():
-                        rv = self.remove_namespace(v) # isolate namespace and name
+                        rv = self.remove_full_iri(v) # isolate namespace and name
                         print('{} : {}:{}'.format(k, rv[0], rv[1]))
         print # end with new line
         return rv
@@ -78,26 +78,26 @@ if __name__ == '__main__':
     print("Mass attribute of milk product 1:")
     pq.print_all_solutions(query)
 
-    # print("------changing values----")
-    # query = pq.prolog_query("triple(pap:'milk_product_1', soma:hasMassAttribute, X)")
-    # print("Mass attribute of milk product 1:")
-    # pq.print_all_solutions(query)
+    print("------changing values----")
+    query = pq.prolog_query("triple(pap:'milk_product_1', soma:hasMassAttribute, X)")
+    print("Mass attribute of milk product 1:")
+    pq.print_all_solutions(query)
 
-    # query = pq.prolog_query("kb_project(triple(pap:'milk_product_1', soma:hasMassAttribute, pap:'milk_weight_half'))")
-    # print("Changed:")
-    # pq.print_all_solutions(query)
+    query = pq.prolog_query("kb_project(triple(pap:'milk_product_1', soma:hasMassAttribute, pap:'milk_weight_half'))")
+    print("Changed:")
+    pq.print_all_solutions(query)
 
-    # query = pq.prolog_query("triple(pap:'milk_product_1', soma:hasMassAttribute, X)")
-    # print("Mass attribute of milk product 1:")
-    # pq.print_all_solutions(query)
+    query = pq.prolog_query("triple(pap:'milk_product_1', soma:hasMassAttribute, X)")
+    print("Mass attribute of milk product 1:")
+    pq.print_all_solutions(query)
 
-    # query = pq.prolog_query("kb_unproject(triple(pap:'milk_product_1', soma:hasMassAttribute, pap:'milk_weight_full'))")
-    # print("Removed old values:")
-    # pq.print_all_solutions(query)
+    query = pq.prolog_query("kb_unproject(triple(pap:'milk_product_1', soma:hasMassAttribute, pap:'milk_weight_full'))")
+    print("Removed old values:")
+    pq.print_all_solutions(query)
 
-    # query = pq.prolog_query("triple(pap:'milk_product_1', soma:hasMassAttribute, X)")
-    # print("Mass attribute of milk product 1:")
-    # pq.print_all_solutions(query)
+    query = pq.prolog_query("triple(pap:'milk_product_1', soma:hasMassAttribute, X)")
+    print("Mass attribute of milk product 1:")
+    pq.print_all_solutions(query)
 
 
     print("------ Changing values in time----")
