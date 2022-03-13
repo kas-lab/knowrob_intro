@@ -45,7 +45,7 @@ class PrologQuery(object):
     def remove_full_iri(self, value): 
         """ Takes as argument a query result dictionary and returns the query in tuple format
         (namespace, name_value). """
-
+	value = str(value)
         q = 'findall([_X, _Y], rdf_current_ns(_X, _Y), NS)'
         solution = self.prolog.once(q)
         for ns in solution['NS']:

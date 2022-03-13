@@ -101,6 +101,15 @@
     
 
 
+    <!-- http://www.airlab.org/tiago/pick-and-place#Cheese -->
+
+    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Cheese">
+        <rdfs:subClassOf rdf:resource="http://www.airlab.org/tiago/pick-and-place#Perishable"/>
+        <owl:disjointWith rdf:resource="http://www.airlab.org/tiago/pick-and-place#Milk"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.airlab.org/tiago/pick-and-place#Food -->
 
     <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Food">
@@ -158,6 +167,14 @@
     
 
 
+    <!-- http://www.airlab.org/tiago/pick-and-place#Milk -->
+
+    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Milk">
+        <rdfs:subClassOf rdf:resource="http://www.airlab.org/tiago/pick-and-place#Perishable"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.airlab.org/tiago/pick-and-place#Moving -->
 
     <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Moving">
@@ -177,10 +194,26 @@
     
 
 
+    <!-- http://www.airlab.org/tiago/pick-and-place#Perishable -->
+
+    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Perishable">
+        <rdfs:subClassOf rdf:resource="http://www.airlab.org/tiago/pick-and-place#Food"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.airlab.org/tiago/pick-and-place#RefrigeratedTable -->
 
     <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#RefrigeratedTable">
         <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Table"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.airlab.org/tiago/pick-and-place#Rice -->
+
+    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Rice">
+        <rdfs:subClassOf rdf:resource="http://www.airlab.org/tiago/pick-and-place#NonPerishable"/>
     </owl:Class>
     
 
@@ -290,39 +323,6 @@
     
 
 
-    <!-- http://www.airlab.org/tiago/pick-and-place#Cheese -->
-
-    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Cheese">
-        <rdfs:subClassOf rdf:resource="http://www.airlab.org/tiago/pick-and-place#Perishable"/>
-        <owl:disjointWith rdf:resource="http://www.airlab.org/tiago/pick-and-place#Milk"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.airlab.org/tiago/pick-and-place#Milk -->
-
-    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Milk">
-        <rdfs:subClassOf rdf:resource="http://www.airlab.org/tiago/pick-and-place#Perishable"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.airlab.org/tiago/pick-and-place#Perishable -->
-
-    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Perishable">
-        <rdfs:subClassOf rdf:resource="http://www.airlab.org/tiago/pick-and-place#Food"/>
-    </owl:Class>
-    
-
-
-    <!-- http://www.airlab.org/tiago/pick-and-place#Rice -->
-
-    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Rice">
-        <rdfs:subClassOf rdf:resource="http://www.airlab.org/tiago/pick-and-place#NonPerishable"/>
-    </owl:Class>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -382,9 +382,9 @@
     
 
 
-    <!-- http://www.airlab.org/tiago/pick-and-place#gripper_joint1 -->
+    <!-- http://www.airlab.org/tiago/pick-and-place#gripper1_joint -->
 
-    <owl:NamedIndividual rdf:about="http://www.airlab.org/tiago/pick-and-place#gripper_joint1">
+    <owl:NamedIndividual rdf:about="http://www.airlab.org/tiago/pick-and-place#gripper1_joint">
         <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#RevoluteJoint"/>
         <SOMA:hasChildLink rdf:resource="http://www.airlab.org/tiago/pick-and-place#gripper1"/>
         <SOMA:hasJointLimit rdf:resource="http://www.airlab.org/tiago/pick-and-place#joint_max_effort_value"/>
@@ -418,7 +418,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.airlab.org/tiago/pick-and-place#joint_max_effort_value">
         <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#JointLimit"/>
-        <SOMA:hasJointEffortLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#double">250.0</SOMA:hasJointEffortLimit>
+        <SOMA:hasJointEffortLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.5</SOMA:hasJointEffortLimit>
     </owl:NamedIndividual>
     
 
@@ -585,10 +585,10 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#DishwasherTab"/>
-            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#PancakeMix"/>
             <rdf:Description rdf:about="http://www.airlab.org/tiago/pick-and-place#Perishable"/>
             <rdf:Description rdf:about="http://www.airlab.org/tiago/pick-and-place#Rice"/>
+            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#DishwasherTab"/>
+            <rdf:Description rdf:about="http://www.ease-crc.org/ont/SOMA.owl#PancakeMix"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>
