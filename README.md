@@ -1,4 +1,4 @@
-# knowrob-intro
+# knowrob_intro
 
 This repository store the first steps into using a self-made ontology for Knowrob.
 
@@ -11,7 +11,7 @@ Create a catking repository, clone this repository and [Knowrob](https://github.
 ```Bash
 rosdep update
 cd ~/catkin_ws/src
-git clone https://github.com/kas-lab/knowrob-intro.git
+git clone https://github.com/kas-lab/knowrob_intro.git
 wstool init
 wstool merge https://raw.github.com/knowrob/knowrob/master/rosinstall/knowrob-base.rosinstall
 wstool update
@@ -42,7 +42,7 @@ rosrun rosprolog rosprolog_commandline.py
 Inside the Prolog terminal, first load your ontology:
 
 ```Bash
-load_owl('package://knowrob-intro/owl/krr_exercise.owl', [namespace(pap, 'http://www.airlab.org/tiago/pick-and-place#')])
+load_owl('package://knowrob_intro/owl/krr_exercise.owl', [namespace(pap, 'http://www.airlab.org/tiago/pick-and-place#')])
 ```
 pap is the name space defined for your ontology, you can use any name.
 
