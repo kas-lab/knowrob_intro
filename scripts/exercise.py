@@ -20,7 +20,7 @@ query = pq.prolog_query("load_owl('package://knowrob_intro/owl/krr_exercise.owl'
 #     """
 #     pose_goal = geometry_msgs.msg.Pose()
 
-#     pose_list = list(solution[0][1].split(", "))
+#     pose_list = list(solution[0].split(", "))
 #     pose = map(float, pose_list)
 
 #     pose_goal.position.x = pose[0]
@@ -51,36 +51,24 @@ def products_in_table(table):
 
 print("\n------------------PART 1: Searching for all refrigerated tables -------------------------------------\n")
 
-query = pq.prolog_query("instance_of(X, pap:'RefrigeratedTable').")
-print("Refrigerated tables: ")
-refrig_tables = pq.get_all_solutions(query) # format: [(namespace, name_value)], to access
-                                           # to the name value, refrig_table[0][1], if there are
-                                           # more than one, regrig_table[i][1], being 
-                                           # i = 0, 1, 2, ..., n individuals results
-                                           # or access the tuple through a for loop and use element[1]
+# Get a list with all refrigerated tables
+
 for refrig_table in refrig_tables: # go through all refrigerated tables
     # get pose
-    pose_refrig = table_pose(refrig_table[1])
+    pose_refrig = table_pose(refrig_table)
     # get products
-    products_ref = products_in_table(refrig_table[1])
+    products_ref = products_in_table(refrig_table)
 
 
 print("\n------------------PART 2: Searching for all non-refrigerated tables ------------------------------\n")
 
 
-# Get non-refrigerated tables
-query = pq.prolog_query("instance_of(X, soma:'Table'), not(instance_of(X, pap:'RefrigeratedTable')).")
-print("Non-refrigerated tables: ")
-tables = pq.get_all_solutions(query)
-pose_tables = {} # dictionary to store table: pose
-product_tables = {} # dictionary to store table:product
+# Get a list with all non-refrigerated tables
 
 for table in tables: # go through all tables
     # get pose
-    pose_tb = table_pose(table[1])
-    pose_tables[table[1]] = pose_tb
+    pose_tb = table_pose(table)
     # get products
-    products_ref = products_in_table(table[1])
-    product_tables[table[1]] = products_ref
+    products_ref = products_in_table(table)
 
 

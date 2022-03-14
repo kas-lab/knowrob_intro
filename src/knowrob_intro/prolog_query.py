@@ -45,17 +45,16 @@ class PrologQuery(object):
     def remove_full_iri(self, value): 
         """ Takes as argument a query result dictionary and returns the query in tuple format
         (namespace, name_value). """
-	value = str(value)
+        value = str(value)
         q = 'findall([_X, _Y], rdf_current_ns(_X, _Y), NS)'
         solution = self.prolog.once(q)
         for ns in solution['NS']:
             if ns[1] in value:
                 value_new = value.replace(ns[1], '')
-		break
-	    else:
-		value_new = value
-        solution_formated = (ns[0], value_new) # tuple namespace, individual
-        return solution_formated
+                break
+            else:
+                value_new = value
+        return value_new
 
     def get_all_solutions(self, solutions, print_solutions=True):
         """ Stores all query solutions in a list of tuples (namespace, name_value) for easy usage.
@@ -64,7 +63,7 @@ class PrologQuery(object):
         solutions_list = []
         name_value = ()
         if len(solutions) == 0: # list empty
-            name_value = ('false', 'false')
+            name_value = 'false'
             solutions_list.append(name_value)
             if print_solutions == True:
                 print('false.')
@@ -72,18 +71,17 @@ class PrologQuery(object):
         else:
             for s in solutions:
                 if s == dict(): # if query result is an empty dict
-                    name_value = ('true', 'true')
+                    name_value = 'true'
                     solutions_list.append(name_value)
                     if print_solutions == True:
                         print('true.')
 
                 else:
                     for k, v in s.items():
-                        rv = self.remove_full_iri(v) # isolate namespace and name
-                        name_value = (rv[0], rv[1])
+                        name_value = self.remove_full_iri(v) # isolate namespace and name
                         solutions_list.append(name_value)
                         if print_solutions == True: 
-				print('{} : {}:{}'.format(k, name_value[0], name_value[1]))
+                            print('{} : {}'.format(k, name_value))
         if print_solutions == True: 
             print # end with new line
         return solutions_list
