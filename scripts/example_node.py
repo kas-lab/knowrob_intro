@@ -22,6 +22,17 @@ query = pq.prolog_query("instance_of(X, pap:'Milk').")
 print("Instances of Milk:")
 pq.get_all_solutions(query)
 
+# # (Find) all instances of Food
+# query = pq.prolog_query("instance_of(X, pap:'Food').")
+# print("Query result:")
+# print(query)
+# print
+# print("Instances of Food:")
+# food_instances = pq.get_all_solutions(query)
+# print("Print result:")
+# print(food_instances)
+# print
+# print("First food instance found {}".format(food_instances[0][1]))
 
 # (Find) all classes that are domain of has mass value property
 query = pq.prolog_query("has_domain(soma:'hasMassValue',X).")
@@ -32,4 +43,7 @@ pq.get_all_solutions(query)
 query = pq.prolog_query("holds(pap:'milk_product_1', soma:hasMassAttribute, X)")
 print("Mass attribute of milk product 1:")
 pq.get_all_solutions(query)
+
+
+
 
