@@ -10,10 +10,6 @@ from knowrob_intro.prolog_query import PrologQuery
 rospy.init_node('example_query_owl') # initialize node
 pq = PrologQuery() # create a prolog query class instance
 
- # clean DB before starting, this removes values from previous uses
-print("Cleaning database...")
-pq.prolog_query("kb_unproject(_).")
-
 # load example.owl in the knowrob database to access its content
 query = pq.prolog_query("load_owl('package://knowrob_intro/owl/krr_exercise.owl', [namespace(pap, 'http://www.airlab.org/tiago/pick-and-place#')]).")
     

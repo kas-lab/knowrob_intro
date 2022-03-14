@@ -73,13 +73,7 @@ To facilitate a quick introduction to knowrob, we have added a brief description
 * [Knowrob language terms documentation](https://knowrob.github.io/knowrob/master/lang/index.html)
 
 ### Our understanding on interfacing with the knowledge base with examples
-* [Read from the ontology](h)
-* [Main knowrob terms]
-* [Asserting properties]
-* [Creating individuals]
-
-
-first steps can 
+* TODO
 
 ## Some comments:
 
