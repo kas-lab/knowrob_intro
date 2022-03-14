@@ -59,7 +59,7 @@ Launch knowrob:
 roslaunch knowrob knowrob.launch 
 ```
 
-Launch a test quering code
+Launch a test querying code
 ```Bash
 rosrun knowrob_intro example_query_owl.py 
 ```
