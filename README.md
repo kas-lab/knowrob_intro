@@ -15,6 +15,7 @@ git clone https://github.com/kas-lab/knowrob-intro.git
 wstool init
 wstool merge https://raw.github.com/knowrob/knowrob/master/rosinstall/knowrob-base.rosinstall
 wstool update
+source ../devel/setup.bash
 rosdep install --ignore-src --from-paths .
 cd ~/catkin_ws
 catkin_make
