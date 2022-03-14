@@ -72,3 +72,24 @@ for table in tables: # go through all tables
     products_ref = products_in_table(table)
 
 
+print("\n------------------PART 5: check if the object is graspable​ ------------------------------\n")
+
+#  ADD HERE YOUR FUNCTION to check if a product is graspable
+
+
+print("\n------------------PART 3: Searching for perishable products in table_1 ------------------------------\n")
+
+#  ADD HERE YOUR QUERY to get a list with all perishable products in table_1
+
+#  PART5: add the check product graspable
+
+
+print("\n------------------PART 4: Searching for non-perishable products in table ------------------------------\n")
+
+#  ADD HERE YOUR QUERY to get a list with all non-perishable products in table
+
+#  PART5: add the check product graspable
+
+print("\n------------------PART 6: Print required actions to move products to the correct table destinations ------------------------------\n")
+
+#  ADD HERE YOUR CODE 
