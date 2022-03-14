@@ -15,12 +15,12 @@ query = pq.prolog_query("load_owl('package://knowrob_intro/owl/krr_exercise.owl'
     
 #------------------------------------------------------------------------------------
 
-# def query_pose_transform(solution):
+# def query_pose_transform(pose_query_result):
 #     """Convert pose string into pose goal object.
 #     """
 #     pose_goal = geometry_msgs.msg.Pose()
 
-#     pose_list = list(solution[0].split(", "))
+#     pose_list = list(pose_query_result[0].split(", "))
 #     pose = map(float, pose_list)
 
 #     pose_goal.position.x = pose[0]
@@ -51,7 +51,7 @@ def products_in_table(table):
 
 print("\n------------------PART 1: Searching for all refrigerated tables -------------------------------------\n")
 
-# Get a list with all refrigerated tables
+# ADD HERE YOUR QUERY to get a list with all refrigerated tables
 
 for refrig_table in refrig_tables: # go through all refrigerated tables
     # get pose
@@ -63,7 +63,7 @@ for refrig_table in refrig_tables: # go through all refrigerated tables
 print("\n------------------PART 2: Searching for all non-refrigerated tables ------------------------------\n")
 
 
-# Get a list with all non-refrigerated tables
+#  ADD HERE YOUR QUERY to get a list with all non-refrigerated tables
 
 for table in tables: # go through all tables
     # get pose
