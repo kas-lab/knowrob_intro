@@ -418,7 +418,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.airlab.org/tiago/pick-and-place#joint_max_effort_value">
         <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#JointLimit"/>
-        <SOMA:hasJointEffortLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.5</SOMA:hasJointEffortLimit>
+        <SOMA:hasJointEffortLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1.1</SOMA:hasJointEffortLimit>
     </owl:NamedIndividual>
     
 
