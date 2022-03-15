@@ -9,6 +9,7 @@ Install SWI prolog and MongoDB using [these instructions](https://github.com/kno
 Create a catking repository, clone this repository and [Knowrob](https://github.com/knowrob/knowrob):
 
 ```Bash
+source /opt/ros/melodic/setup.bash
 rosdep update
 cd ~/catkin_ws/src
 git clone https://github.com/kas-lab/knowrob_intro.git
