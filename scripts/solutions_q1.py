@@ -15,12 +15,12 @@ query = pq.prolog_query("load_owl('package://knowrob_intro/owl/krr_exercise.owl'
     
 #------------------------------------------------------------------------------------
 
-# def query_pose_transform(pose_query_result):
+# def query_pose_transform(solution):
 #     """Convert pose string into pose goal object.
 #     """
 #     pose_goal = geometry_msgs.msg.Pose()
 
-#     pose_list = list(pose_query_result[0].split(", "))
+#     pose_list = list(solution[0].split(", "))
 #     pose = map(float, pose_list)
 
 #     pose_goal.position.x = pose[0]
@@ -51,7 +51,11 @@ def products_in_table(table):
 
 print("\n------------------PART 1: Searching for all refrigerated tables -------------------------------------\n")
 
-# ADD HERE YOUR QUERY to get a list with all refrigerated tables
+# ADD HERE YOUR QUERY to get a list with all refrigerated tables--------
+query = pq.prolog_query("instance_of(X, pap:'RefrigeratedTable').")
+print("Refrigerated tables: ")
+refrig_tables = pq.get_all_solutions(query)
+#---------------------------------------------------------------------------
 
 for refrig_table in refrig_tables: # go through all refrigerated tables
     # get pose
@@ -62,15 +66,17 @@ for refrig_table in refrig_tables: # go through all refrigerated tables
 
 print("\n------------------PART 2: Searching for all non-refrigerated tables ------------------------------\n")
 
-
-#  ADD HERE YOUR QUERY to get a list with all non-refrigerated tables
+# ADD HERE YOUR QUERY to get a list with all non-refrigerated tables-------------
+query = pq.prolog_query("instance_of(X, soma:'Table'), \+(instance_of(X, pap:'RefrigeratedTable')).")
+print("Non-refrigerated tables: ")
+tables = pq.get_all_solutions(query)
+# -----------------------------------------------------------------------------------
 
 for table in tables: # go through all tables
     # get pose
     pose_tb = table_pose(table)
     # get products
     products_ref = products_in_table(table)
-
 
 print("\n------------------PART 5: check if the object is graspable ------------------------------\n")
 
@@ -83,7 +89,6 @@ print("\n------------------PART 3: Searching for perishable products in table_1 
 
 #  PART5: add the check product graspable
 
-
 print("\n------------------PART 4: Searching for non-perishable products in table ------------------------------\n")
 
 #  ADD HERE YOUR QUERY to get a list with all non-perishable products in table
@@ -93,3 +98,7 @@ print("\n------------------PART 4: Searching for non-perishable products in tabl
 print("\n------------------PART 6: Print required actions to move products to the correct table destinations ------------------------------\n")
 
 #  ADD HERE YOUR CODE 
+
+
+
+
