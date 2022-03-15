@@ -21,13 +21,6 @@ cd ~/catkin_ws
 catkin build
 ```
 
-rosdep update
-cd ~/catkin_ws/src
-git clone git@github.com:kas-lab/knowrob.git
-rosdep install --ignore-src --from-paths .
-cd ~/catkin_ws
-catkin build
-
 ## Launch
 
 Run the mongodb service
