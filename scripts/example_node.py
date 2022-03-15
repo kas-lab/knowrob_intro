@@ -22,7 +22,7 @@ query = pq.prolog_query("instance_of(X, pap:'Milk').")
 print("Instances of Milk:")
 pq.get_all_solutions(query)
 
-# # (Find) all instances of Food
+# (Find) all instances of Food
 query = pq.prolog_query("instance_of(X, pap:'Food').")
 print("Query result:")
 print("Instances of Food:")
@@ -38,6 +38,17 @@ pq.get_all_solutions(query)
 query = pq.prolog_query("holds(pap:'milk_product_1', soma:hasMassAttribute, X)")
 print("Mass attribute of milk product 1:")
 pq.get_all_solutions(query)
+
+# (Find) all instances of Food
+query = pq.prolog_query("instance_of(X, pap:'Food').")
+print("Query result:")
+print(query)
+print("\nFormated solution\n")
+s = pq.get_all_solutions(query)
+print("Not formated solution")
+print(s)
+print("\nFirst element of solution")
+print(s[0])
 
 
 

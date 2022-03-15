@@ -72,7 +72,7 @@ for table in tables: # go through all tables
     products_ref = products_in_table(table)
 
 
-print("\n------------------PART 5: check if the object is graspable​ ------------------------------\n")
+print("\n------------------PART 5: check if the object is graspable ------------------------------\n")
 
 #  ADD HERE YOUR FUNCTION to check if a product is graspable
 
