@@ -6,7 +6,7 @@ This repository store the first steps into using a self-made ontology for Knowro
 
 Install SWI prolog and MongoDB using [these instructions](https://github.com/knowrob/knowrob#installation-of-swi-prolog-and-mongodb).
 
-Create a catking repository, clone this repository and [Knowrob](https://github.com/knowrob/knowrob):
+Create a catking repository, clone this repository and [Knowrob](https://github.com/kas-lab/knowrob):
 
 ```Bash
 source /opt/ros/melodic/setup.bash
@@ -14,12 +14,20 @@ rosdep update
 cd ~/catkin_ws/src
 git clone https://github.com/kas-lab/knowrob_intro.git
 wstool init
-wstool merge https://raw.github.com/knowrob/knowrob/master/rosinstall/knowrob-base.rosinstall
+wstool merge https://raw.githubusercontent.com/kas-lab/knowrob/master/rosinstall/knowrob-base.rosinstall
 wstool update
 rosdep install --ignore-src --from-paths .
 cd ~/catkin_ws
 catkin build
 ```
+
+rosdep update
+cd ~/catkin_ws/src
+git clone git@github.com:kas-lab/knowrob.git
+rosdep install --ignore-src --from-paths .
+cd ~/catkin_ws
+catkin build
+
 ## Launch
 
 Run the mongodb service
