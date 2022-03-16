@@ -38,7 +38,7 @@ Launch a Prolog CLI as querying interface:
 rosrun rosprolog rosprolog_commandline.py 
 ```
 
-## Quering
+## Querying
 
 Inside the Prolog terminal, first load your ontology:
 
@@ -53,7 +53,7 @@ is_class(soma:'Crockery').
 ```
 True.
 
-## Quering from source
+## Querying from source
 
 Launch knowrob:
 ```Bash
