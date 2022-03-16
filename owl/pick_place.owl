@@ -370,7 +370,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.airlab.org/tiago/pick-and-place#hagelslag1_table_pose">
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#SpaceRegion"/>
-        <SOMA:hasPositionData rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.6, -0.2, 0.93</SOMA:hasPositionData>
+        <SOMA:hasPositionData rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0.6, -0.3, 0.93</SOMA:hasPositionData>
     </owl:NamedIndividual>
     
 
