@@ -11,7 +11,8 @@ rospy.init_node('example_query_owl') # initialize node
 pq = PrologQuery() # create a prolog query class instance
 
 # load example.owl in the knowrob database to access its content
-query = pq.prolog_query("load_owl('package://knowrob_intro/owl/krr_exercise.owl', [namespace(pap, 'http://www.airlab.org/tiago/pick-and-place#')]).")
+query = pq.prolog_query("load_owl('package://knowrob_intro/owl/krr_exercise.owl',\
+     [namespace(pap, 'http://www.airlab.org/tiago/pick-and-place#')]).")
     
 #------------------------------------------------------------------------------------
 
