@@ -4,6 +4,7 @@ import roslib; roslib.load_manifest('rosprolog')
 
 import rospy
 from rosprolog_client import PrologException, Prolog
+from knowrob_intro.prolog_query import PrologQuery
 
 if __name__ == '__main__':
     rospy.init_node('example_exercise_prolog_kb')
