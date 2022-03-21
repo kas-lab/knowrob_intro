@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://www.airlab.org/tiago/pick-and-place#"
      xml:base="http://www.airlab.org/tiago/pick-and-place"
+     xmlns:pap="http://www.airlab.org/tiago/pick-and-place.owl#"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:DUL="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
