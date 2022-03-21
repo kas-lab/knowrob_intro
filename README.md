@@ -30,7 +30,7 @@ cd ~/catkin_ws
 catkin build
 ```
 
-source catkin_ws/develop/setup.bash
+source catkin_ws/devel/setup.bash
 
 
 ## Launch
@@ -45,13 +45,13 @@ sudo systemctl start mongod.service
 Launch knowrob:
 
 ```Bash
-source catkin_ws/develop/setup.bash
+source catkin_ws/devel/setup.bash
 roslaunch knowrob knowrob.launch 
 ```
 
 In another terminal Launch a Prolog CLI as querying interface:
 ```Bash
-source catkin_ws/develop/setup.bash
+source catkin_ws/devel/setup.bash
 rosrun rosprolog rosprolog_commandline.py 
 ```
 
@@ -76,13 +76,13 @@ True.
 
 Launch knowrob:
 ```Bash
-source catkin_ws/develop/setup.bash
+source catkin_ws/devel/setup.bash
 roslaunch knowrob knowrob.launch 
 ```
 
 Launch a test querying code:
 ```Bash
-source catkin_ws/develop/setup.bash
+source catkin_ws/devel/setup.bash
 rosrun knowrob_intro example_query_owl.py 
 ```
 
@@ -116,7 +116,7 @@ sudo systemctl start mongod.service
 
 Launch knowrob:
 ```Bash
-source catkin_ws/develop/setup.bash
+source catkin_ws/devel/setup.bash
 roslaunch knowrob knowrob.launch 
 ```
 
