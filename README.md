@@ -2,6 +2,92 @@
 
 This repository store the first steps into using a self-made ontology for Knowrob.
 
+We offer below intructions to install this repo and use it in two flavours:
+- Using the singularity image [ro4714-22-3.simg](https://tud365.sharepoint.com/:u:/s/Metacontrol/EQgJLRS9pRZHqlvAtiSc5jUB1WG3-JOZzHHtF4ZCnwMCMw?e=HHaBxP) for the KRR course (contains most required KnowRob dependencies)
+- Using a native ROS installation
+
+# Using the singularity image [ro4714-22-3.simg](https://tud365.sharepoint.com/:u:/s/Metacontrol/EQgJLRS9pRZHqlvAtiSc5jUB1WG3-JOZzHHtF4ZCnwMCMw?e=HHaBxP)
+
+**Outside** of the singularity image:
+- Install MongoDB using [these instructions](https://github.com/knowrob/knowrob#installation-of-swi-prolog-and-mongodb).
+- Create a catking repository, clone this repository and [Knowrob](https://github.com/kas-lab/knowrob):
+```Bash
+source /opt/ros/melodic/setup.bash
+rosdep update
+cd ~/catkin_ws/src
+git clone https://github.com/kas-lab/knowrob_intro.git
+```
+
+**Inside the singularity** (`singularity shell -p ro47014-22-3.simg`):
+
+```Bash
+source /opt/ros/melodic/setup.bash
+wstool init
+wstool merge https://raw.githubusercontent.com/kas-lab/knowrob/master/rosinstall/knowrob-base.rosinstall
+wstool update
+rosdep install --ignore-src --from-paths .
+cd ~/catkin_ws
+catkin build
+```
+
+source catkin_ws/develop/setup.bash
+
+
+## Launch
+
+Run the mongodb service from **OUTSIDE** simgularity
+```Bash
+sudo systemctl start mongod.service
+```
+
+**Inside the singularity** (`singularity shell -p ro47014-22-3.simg`):
+
+Launch knowrob:
+
+```Bash
+source catkin_ws/develop/setup.bash
+roslaunch knowrob knowrob.launch 
+```
+
+In another terminal Launch a Prolog CLI as querying interface:
+```Bash
+source catkin_ws/develop/setup.bash
+rosrun rosprolog rosprolog_commandline.py 
+```
+
+## Querying
+
+Inside the Prolog terminal, first load your ontology:
+
+```Bash
+load_owl('package://knowrob_intro/owl/krr_exercise.owl', [namespace(pap, 'http://www.airlab.org/tiago/pick-and-place#')])
+```
+pap is the name space defined for your ontology, you can use any name.
+
+Example of queries here, more information at [Knowrob model documentation](https://knowrob.github.io/knowrob/master/model/):
+```
+is_class(soma:'Crockery').
+```
+True.
+
+## Querying from code
+
+**Inside the singularity** (`singularity shell -p ro47014-22-3.simg`):
+
+Launch knowrob:
+```Bash
+source catkin_ws/develop/setup.bash
+roslaunch knowrob knowrob.launch 
+```
+
+Launch a test querying code:
+```Bash
+source catkin_ws/develop/setup.bash
+rosrun knowrob_intro example_query_owl.py 
+```
+
+
+# Using a native ROS installation
 ## Installation
 
 Install SWI prolog and MongoDB using [these instructions](https://github.com/knowrob/knowrob#installation-of-swi-prolog-and-mongodb).
@@ -30,6 +116,7 @@ sudo systemctl start mongod.service
 
 Launch knowrob:
 ```Bash
+source catkin_ws/develop/setup.bash
 roslaunch knowrob knowrob.launch 
 ```
 
@@ -53,7 +140,7 @@ is_class(soma:'Crockery').
 ```
 True.
 
-## Querying from source
+## Querying from code
 
 Launch knowrob:
 ```Bash
@@ -65,7 +152,7 @@ Launch a test querying code
 rosrun knowrob_intro example_query_owl.py 
 ```
 
-## Interfacing with the knowledge base
+# Interfacing with the knowledge base
 
 To facilitate a quick introduction to knowrob, we have added a brief description of our understanding in the main commands used. However, this documentation only serves as a starting point. For a better understanding please refer to the official documentation.
 
