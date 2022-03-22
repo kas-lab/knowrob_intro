@@ -25,7 +25,6 @@ source /opt/ros/melodic/setup.bash
 wstool init
 wstool merge https://raw.githubusercontent.com/kas-lab/knowrob/master/rosinstall/knowrob-base.rosinstall
 wstool update
-rosdep install --ignore-src --from-paths .
 cd ~/catkin_ws
 catkin build
 ```
