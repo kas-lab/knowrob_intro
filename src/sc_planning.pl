@@ -3,16 +3,17 @@
 % module definition and public (externally visible) predicates
 :- module(sc_planning,
     [
-        holding/2,
         location/3,
         legal/1
     ]).
 
+:- use_module(library('prolog_kb')).
+
 % possibility axioms grab and place
-poss(grab(X), S) :- nonperishable(X), location(X, table1, S), \+ holding(Y, S).
-poss(grab(X), S) :- perishable(X), location(X, table2, S), \+ holding(Y, S).
-poss(place(L), S) :- L = table2, holding(X,S), nonperishable(X).
-poss(place(L), S) :- L = table1, holding(X,S), perishable(X).
+poss(grab(X), S) :- nonperishable(X), location(X,table1,S), \+ holding(_,S);
+                    perishable(X), location(X,table2,S), \+ holding(_,S).
+poss(place(L), S) :- L = table1, holding(X,S), perishable(X);
+                     L = table2, holding(X,S), nonperishable(X).
 
 % successor axiom holding
 holding(X, do(A, S)) :- A = grab(X).

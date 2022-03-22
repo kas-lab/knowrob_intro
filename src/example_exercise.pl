@@ -1,1 +1,0 @@
-:- use_module(library('my_module')).

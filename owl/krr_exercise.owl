@@ -194,6 +194,15 @@
     
 
 
+    <!-- http://www.airlab.org/tiago/pick-and-place#NonRefrigeratedTable -->
+
+    <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#NonRefrigeratedTable">
+        <rdfs:subClassOf rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Table"/>
+        <owl:disjointWith rdf:resource="http://www.airlab.org/tiago/pick-and-place#RefrigeratedTable"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.airlab.org/tiago/pick-and-place#Perishable -->
 
     <owl:Class rdf:about="http://www.airlab.org/tiago/pick-and-place#Perishable">
@@ -466,6 +475,7 @@
     <!-- http://www.airlab.org/tiago/pick-and-place#table -->
 
     <owl:NamedIndividual rdf:about="http://www.airlab.org/tiago/pick-and-place#table">
+        <rdf:type rdf:resource="http://www.airlab.org/tiago/pick-and-place#NonRefrigeratedTable"/>
         <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Table"/>
         <DUL:hasRegion rdf:resource="http://www.airlab.org/tiago/pick-and-place#table_pose"/>
     </owl:NamedIndividual>
@@ -475,6 +485,7 @@
     <!-- http://www.airlab.org/tiago/pick-and-place#table_0 -->
 
     <owl:NamedIndividual rdf:about="http://www.airlab.org/tiago/pick-and-place#table_0">
+        <rdf:type rdf:resource="http://www.airlab.org/tiago/pick-and-place#NonRefrigeratedTable"/>
         <rdf:type rdf:resource="http://www.ease-crc.org/ont/SOMA.owl#Table"/>
         <DUL:hasRegion rdf:resource="http://www.airlab.org/tiago/pick-and-place#table_0_pose"/>
     </owl:NamedIndividual>

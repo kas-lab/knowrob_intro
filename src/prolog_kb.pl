@@ -5,9 +5,6 @@
         nonperishable/1
     ]).
 
-:- use_module(library('sc_planning')).
-
-
 % define initial state using prolog (the KB)
 robot(tiago).
 perishable(milk).
