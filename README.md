@@ -160,28 +160,6 @@ To facilitate a quick introduction to knowrob, we have added a brief description
 * [Knowrob language documentation](https://knowrob.github.io/knowrob/master/lang/index.html)
 * [Knowrob language terms documentation](https://knowrob.github.io/knowrob/master/lang/index.html)
 
-# Using prolog modules
-
-The following launch files can be used to test examples on using prolog modules with your python code:
-* `launch/example_query_prolog.launch`: example in which the knowledge about objects is in a prolog module.
-* `launch/example_situation_calculus.launch`: example with planning using situation calculus.
-* `launch/example_owl_kb_and_prolog_rules.launch`: example in which the knowledge about objects is store in an OWL ontology, while the store rules are rules in a prolog module.
-
-To run these examples:
-
-- Start the MongoDB  (OUTSIDE the singularity image)
-```
-systemctl start mongod.service
-```
-
-- Now within the singularity, source your workspace and launch the example:
-```
-singularity shell -p ro47014-22-3.simg
-source [path_to_your_catkin_ws]/devel/setup.bash
-roslaunch knowrob_intro example_[XXX].launch
-```
-
-
 ### Our understanding on interfacing with the knowledge base with examples
 * TODO
 
@@ -223,3 +201,24 @@ Therefore, make sure your .OWL files loads dul and soma namespaces as well. This
         <owl:imports rdf:resource="http://www.ease-crc.org/ont/SOMA.owl"/>
     </owl:Ontology>
  ```
+
+# Using prolog modules
+
+The following launch files can be used to test examples on using prolog modules with your python code:
+* `launch/example_query_prolog.launch`: example in which the knowledge about objects is in a prolog module.
+* `launch/example_situation_calculus.launch`: example with planning using situation calculus.
+* `launch/example_owl_kb_and_prolog_rules.launch`: example in which the knowledge about objects is store in an OWL ontology, while the store rules are rules in a prolog module.
+
+To run these examples:
+
+- Start the MongoDB  (OUTSIDE the singularity image)
+```
+systemctl start mongod.service
+```
+
+- Now within the singularity, source your workspace and launch the example:
+```
+singularity shell -p ro47014-22-3.simg
+source [path_to_your_catkin_ws]/devel/setup.bash
+roslaunch knowrob_intro example_[XXX].launch
+```
