@@ -8,6 +8,6 @@
         <arg name="initial_goal" default="true" />
     </include>
     <!-- Launch example_query_prolog_kb node -->
-    <node name="query_prolog_kb" pkg="knowrob_intro" type="example_query_prolog.py" output="screen"/>
+    <node name="query_prolog_kb" pkg="knowrob_intro" type="example_sc.py" output="screen"/>
 
 </launch>

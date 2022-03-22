@@ -4,8 +4,6 @@
 % module definition and public (externally visible) predicates
 :- module(owl_kb_prolog_rules,
     [
-        perishable/1,
-        nonperishable/1,
         location/2,
         transfer/3
     ]).
