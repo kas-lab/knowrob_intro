@@ -3,25 +3,25 @@
 This repository store the first steps into using a self-made ontology for Knowrob.
 
 We offer below intructions to install this repo and use it in two flavours:
-- Using the singularity image [ro4714-22-3.simg](https://tud365.sharepoint.com/:u:/s/Metacontrol/EQgJLRS9pRZHqlvAtiSc5jUB1WG3-JOZzHHtF4ZCnwMCMw?e=HHaBxP) for the KRR course (contains most required KnowRob dependencies)
+- Using the singularity image [ro4714-23-3.sif](https://tud365.sharepoint.com/:u:/s/RO47014KnowledgeRepresentationandSymbolicReasoning/EQrmDTBAOuVDu-dU2YVa7rMBnIAYGAbVeCWDP3CTn2ezkw?e=WF5ZhI) for the KRR course (contains most required KnowRob dependencies)
 - Using a native ROS installation
 
-# Using the singularity image [ro4714-22-3.simg](https://tud365.sharepoint.com/:u:/s/Metacontrol/EQgJLRS9pRZHqlvAtiSc5jUB1WG3-JOZzHHtF4ZCnwMCMw?e=HHaBxP)
+# Using the singularity image [ro4714-23-3.sif](https://tud365.sharepoint.com/:u:/s/RO47014KnowledgeRepresentationandSymbolicReasoning/EQrmDTBAOuVDu-dU2YVa7rMBnIAYGAbVeCWDP3CTn2ezkw?e=WF5ZhI)
 
 **Outside** of the singularity image:
 - Install MongoDB using [these instructions](https://github.com/knowrob/knowrob#installation-of-swi-prolog-and-mongodb).
 - Create a catking repository, clone this repository and [Knowrob](https://github.com/kas-lab/knowrob):
 ```Bash
-source /opt/ros/melodic/setup.bash
+source /opt/ros/noetic/setup.bash
 rosdep update
 cd ~/catkin_ws/src
 git clone https://github.com/kas-lab/knowrob_intro.git
 ```
 
-**Inside the singularity** (`singularity shell -p ro47014-22-3.simg`):
+**Inside the singularity** (`singularity shell -p ro47014-23-3.sif`):
 
 ```Bash
-source /opt/ros/melodic/setup.bash
+source /opt/ros/noetic/setup.bash
 wstool init
 wstool merge https://raw.githubusercontent.com/kas-lab/knowrob/master/rosinstall/knowrob-base.rosinstall
 wstool update
@@ -94,7 +94,7 @@ Install SWI prolog and MongoDB using [these instructions](https://github.com/kno
 Create a catking repository, clone this repository and [Knowrob](https://github.com/kas-lab/knowrob):
 
 ```Bash
-source /opt/ros/melodic/setup.bash
+source /opt/ros/noetic/setup.bash
 rosdep update
 cd ~/catkin_ws/src
 git clone https://github.com/kas-lab/knowrob_intro.git
