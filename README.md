@@ -10,7 +10,12 @@ We offer below intructions to install this repo and use it in two flavours:
 
 **Outside** of the singularity image:
 - Install MongoDB using [these instructions](https://github.com/knowrob/knowrob#installation-of-swi-prolog-and-mongodb).
-- Create a catking repository, clone this repository and [Knowrob](https://github.com/kas-lab/knowrob):
+
+
+**Inside the singularity** (`singularity shell -p ro47014-23-3.sif`):
+
+- Create a catking workspace (or, if you plan to use knowrob with the robot simulation in the course, use the workspace where you have cloned those repositories).
+- In that workspace, clone this [knowrob_intro](https://github.com/kas-lab/knowrob_intro) repository and [Knowrob](https://github.com/kas-lab/knowrob):
 ```Bash
 source /opt/ros/noetic/setup.bash
 rosdep update
@@ -18,8 +23,7 @@ cd ~/catkin_ws/src
 git clone https://github.com/kas-lab/knowrob_intro.git
 ```
 
-**Inside the singularity** (`singularity shell -p ro47014-23-3.sif`):
-
+Now clone knowrob and get its dependencies:
 ```Bash
 source /opt/ros/noetic/setup.bash
 wstool init
@@ -39,7 +43,7 @@ Run the mongodb service from **OUTSIDE** simgularity
 sudo systemctl start mongod.service
 ```
 
-**Inside the singularity** (`singularity shell -p ro47014-22-3.simg`):
+**Inside the singularity** (`singularity shell -p ro47014-23-3.simg`):
 
 Launch knowrob:
 
@@ -71,7 +75,7 @@ True.
 
 ## Querying from code
 
-**Inside the singularity** (`singularity shell -p ro47014-22-3.simg`):
+**Inside the singularity** (`singularity shell -p ro47014-23-3.simg`):
 
 Launch knowrob:
 ```Bash
