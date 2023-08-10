@@ -1,3 +1,4 @@
+[![Docker](https://github.com/kas-lab/knowrob_intro/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/kas-lab/knowrob_intro/actions/workflows/docker-publish.yml)
 # knowrob_intro
 
 This repository store the first steps into using a self-made ontology for Knowrob.
