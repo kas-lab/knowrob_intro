@@ -1,0 +1,32 @@
+services:
+  mongo:
+    image: mongo:4.4.3-bionic
+    container_name: mongo_container
+    restart: always
+    networks:
+      - knowrob_network
+    logging:
+      driver: "none"
+
+  # the KnowRob container
+  knowrob:
+    image: "ghcr.io/kas-lab/knowrob_intro:main"
+    container_name: knowrob_container
+    depends_on:
+      - 'mongo'
+    environment:
+      - KNOWROB_MONGODB_URI=mongodb://mongo:27017/?appname=knowrob
+      - KNOWROB_MONGO_HOST=mongo
+      - KNOWROB_MONGO_PORT=27017
+      - KNOWROB_MONGO_USER=
+      - KNOWROB_MONGO_PASS=
+      - ROS_HOSTNAME=knowrob
+      - ROS_MASTER_URI=http://knowrob:11311
+    # network_mode: host
+    networks:
+      - knowrob_network
+    command: roslaunch knowrob knowrob.launch
+
+networks:
+  knowrob_network:
+    name: knowrob_network
