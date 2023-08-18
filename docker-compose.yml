@@ -22,10 +22,12 @@ services:
       - KNOWROB_MONGO_PASS=
       - ROS_HOSTNAME=knowrob
       - ROS_MASTER_URI=http://knowrob:11311
-    # network_mode: host
     networks:
       - knowrob_network
     command: roslaunch knowrob knowrob.launch
+    # command: roslaunch knowrob_intro example_owl_kb_and_prolog_rules.launch
+    # command: roslaunch knowrob_intro example_query_prolog.launch
+    # command: roslaunch knowrob_intro example_situation_calculus.launch
 
 networks:
   knowrob_network:
