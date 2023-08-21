@@ -1,9 +1,10 @@
 #!/usr/bin/env python
 
-import roslib; roslib.load_manifest('rosprolog')
-
+import roslib
 import rospy
 from knowrob_intro.prolog_query import PrologQuery
+
+roslib.load_manifest('rosprolog')
 
 if __name__ == '__main__':
     rospy.init_node('example_query_prolog_kb')
