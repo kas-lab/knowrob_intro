@@ -10,7 +10,8 @@ services:
 
   # the KnowRob container
   knowrob:
-    image: "ghcr.io/kas-lab/knowrob_intro:main"
+    # image: "ghcr.io/kas-lab/knowrob_intro:main"
+    image: "knowrob_intro"
     container_name: knowrob_container
     depends_on:
       - 'mongo'
@@ -25,6 +26,8 @@ services:
     networks:
       - knowrob_network
     command: roslaunch knowrob knowrob.launch
+    # command: roslaunch knowrob knowrob.launch initial_package:="knowrob_intro"
+    # command: roslaunch knowrob_intro knowrob_intro.launch
     # command: roslaunch knowrob_intro example_owl_kb_and_prolog_rules.launch
     # command: roslaunch knowrob_intro example_query_prolog.launch
     # command: roslaunch knowrob_intro example_situation_calculus.launch
