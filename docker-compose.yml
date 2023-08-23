@@ -10,8 +10,8 @@ services:
 
   # the KnowRob container
   knowrob:
-    # image: "ghcr.io/kas-lab/knowrob_intro:main"
-    image: "knowrob_intro"
+    image: "ghcr.io/kas-lab/knowrob_intro:main"
+    # image: "knowrob_intro"
     container_name: knowrob_container
     depends_on:
       - 'mongo'
