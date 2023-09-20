@@ -7,6 +7,8 @@ We offer below intructions to install this repo and use it in two flavours:
 - Using the singularity image [ro4714-23-3.sif](https://tud365.sharepoint.com/:u:/s/RO47014KnowledgeRepresentationandSymbolicReasoning/EQrmDTBAOuVDu-dU2YVa7rMBnIAYGAbVeCWDP3CTn2ezkw?e=WF5ZhI) for the KRR course (contains most required KnowRob dependencies)
 - Using a native ROS installation
 
+You can also check this [extended tutorial](https://rezenders-world.vercel.app/knowrob)
+
 # Using the singularity image [ro4714-23-3.sif](https://tud365.sharepoint.com/:u:/s/RO47014KnowledgeRepresentationandSymbolicReasoning/EQrmDTBAOuVDu-dU2YVa7rMBnIAYGAbVeCWDP3CTn2ezkw?e=WF5ZhI)
 
 **Outside** of the singularity image:
